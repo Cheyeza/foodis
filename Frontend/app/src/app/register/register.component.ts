@@ -1,0 +1,85 @@
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { UserService } from '../user.service';
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
+})
+export class RegisterComponent implements OnInit {
+
+  AddUserForm: FormGroup = new FormGroup({
+    firstname: new FormControl(),
+    lastname: new FormControl(),
+    email: new FormControl(),
+    password: new FormControl(),
+    confirmPass: new FormControl()
+  });
+
+  submitted = false;
+
+  constructor(private userServive:UserService, private router: Router, private toast: NgToastService, public fb: FormBuilder) { }
+
+
+  myForm() {
+    this.AddUserForm = this.fb.group({
+      firstname: ['', [ Validators.required ]],
+      lastname: ['', [ Validators.required ]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [ Validators.required ]],
+      confirmPass: ['',[ Validators.required ]]
+    });
+  }
+  ngOnInit(): void {
+  }
+
+  get formValidation(): { [key: string]: AbstractControl } {
+    return this.AddUserForm.controls;
+  }
+
+  AddUser()
+  {
+    
+      this.submitted = true;
+
+      if(this.AddUserForm.value.confirmPass === this.AddUserForm.value.password && this.AddUserForm.value.firstname != '')
+      {
+        let userDetails = {
+          firstname:this.AddUserForm.value.firstname,
+          lastname: this.AddUserForm.value.lastname,
+          email: this.AddUserForm.value.email,
+          password: this.AddUserForm.value.password
+        }
+    
+        console.log(userDetails);
+    
+        this.userServive.AddUser(userDetails).subscribe((next:any) => {
+            console.log('Add successfully!');
+            this.openSuccess();
+            this.router.navigate(['/login']);
+
+            sessionStorage.setItem('token', JSON.stringify(userDetails)); 
+ 
+            this.submitted = false;
+          }, (err) => {
+            this.toast.warning({detail:'Warning',summary:'Fillup the form or Email already exist', sticky:false,position:'tr', duration:6000})
+        });
+      }
+      else
+      {
+        this.openWarning();
+      }
+   
+  }
+  openSuccess() {
+    throw new Error('Method not implemented.');
+  }
+  openWarning() {
+    throw new Error('Method not implemented.');
+  }
+
+
+}
