@@ -29,6 +29,86 @@
   </head>
   
   <body>
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+
+      <form id="stripe-login" [formGroup] = "AddUserForm" novalidate>
+        <span class="padding-bottom--15">Enter Your Sign In Details</span>
+        <div class="form-group">
+          <label for="exampleInputFirstname1">Firstname</label>
+          <input type="firstname" class="form-control" id="exampleInputFirstname1" aria-describedby="firstnameHelp" formControlName="firstname"  type="firstname" name="firstname"
+          [ngClass]="{ 'is-invalid': submitted && formValidation['firstname'].errors }">
+
+          <div *ngIf="submitted && formValidation['firstname'].errors" class="invalid-feedback">
+            <div *ngIf="formValidation['firstname'].errors['required']">Firstname is required</div>
+            <div *ngIf="formValidation['firstname'].errors['firstname']">Firstname is invalid</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputLastname1">Lastname</label>
+          <input type="lastname" class="form-control" id="exampleInputLastname1" aria-describedby="lastnameHelp" formControlName="lastname"  type="lastname" name="lastname"
+          [ngClass]="{ 'is-invalid': submitted && formValidation['lastname'].errors }">
+
+          <div *ngIf="submitted && formValidation['lastname'].errors" class="invalid-feedback">
+            <div *ngIf="formValidation['lastname'].errors['required']">Lastname is required</div>
+            <div *ngIf="formValidation['lastname'].errors['lastname']">Lastname is invalid</div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email"  type="email" name="email"
+          [ngClass]="{ 'is-invalid': submitted && formValidation['email'].errors }">
+
+          <div *ngIf="submitted && formValidation['email'].errors" class="invalid-feedback">
+            <div *ngIf="formValidation['email'].errors['required']">Email is required</div>
+            <div *ngIf="formValidation['email'].errors['email']">Email is invalid</div>
+          </div>
+        </div>
+        <div class="form-group">
+          
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp" formControlName="password"  type="password" name="Password"
+       
+          [ngClass]="{ 'is-invalid': submitted && formValidation['password'].errors }">
+
+                  <div *ngIf="submitted && formValidation['password'].errors" class="invalid-feedback">
+                    <div *ngIf="formValidation['password'].errors['required']">Password is required</div>
+                  </div>
+        </div>
+
+        <div class="form-group">
+          
+          <label for="exampleInputPassword1">Confirm Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp" formControlName="confirmPass"  type="password" name="Password"
+       
+          [ngClass]="{ 'is-invalid': submitted && formValidation['confirmPass'].errors }">
+
+                  <div *ngIf="submitted && formValidation['confirmPass'].errors" class="invalid-feedback">
+                    <div *ngIf="formValidation['confirmPass'].errors['required']">Password is required</div>
+                  </div>
+        </div>
+        <div></div>
+        <div class="field padding-bottom--24">
+          <button (click)="AddUser()" type="submit" class="btn btn-primary">Sign In</button>
+
+        </div>
+
+        <div class="footer-link padding-top--24">
+          <span>Forgot your password? <a class="signup"  href="">Click here</a></span>
+         
+        </div>
+      <div class="footer-link padding-top--24">
+        <span>Don't have an account? <a class="signup" [routerLink]="['/register']" href="">Sign up</a></span>
+       
+      </div>
+
+
+      </form>
+    </div>
+  </div>
+<!-- 
     <div class="login-root">
       <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
         <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
@@ -115,7 +195,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </body>
   
   </html>

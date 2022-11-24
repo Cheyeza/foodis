@@ -9,13 +9,15 @@ import { RouterModule, Routes } from '@angular/router';
 import {NgToastModule} from 'ng-angular-popup';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { LandingComponent } from './landing/landing.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
