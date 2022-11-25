@@ -63,17 +63,13 @@
                   <div class="field padding-bottom--24">
                     <div class="grid--50-50">
                       <label for="password">Password</label>
-                      <div class="reset-pass">
-                        <a href="#">Forgot your password?</a>
+                      <input formControlName="password"  type="password" name="password"
+                    [ngClass]="{ 'is-invalid': submitted && formValidation['password'].errors }">
+                    <div *ngIf="submitted && formValidation['password'].errors" class="invalid-feedback">
+                        <div *ngIf="formValidation['password'].errors['required']">Password is required</div>
                       </div>
                     </div>
-                    <input formControlName="password"  type="password" name="password"
-                    [ngClass]="{ 'is-invalid': submitted && formValidation['password'].errors }">
-  
-                    <div *ngIf="submitted && formValidation['password'].errors" class="invalid-feedback">
-                      <div *ngIf="formValidation['password'].errors['required']">Password is required</div>
-                    </div>
-  
+                
                   </div>
                   <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                     <label for="checkbox">
