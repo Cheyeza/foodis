@@ -1,26 +1,4 @@
-<nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="#">Foodis.Com</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <!-- <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
-      <ul class="navbar-nav mr-auto text-center">
-          <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-          </li>
-      </ul>
-  </div> -->
-  <div class="collapse navbar-collapse w-100 dual-collapse2 order-2 order-md-2" id="navbarNavAltMarkup" text="center">
-    <div class="navbar-nav mr-auto text-center">
-      <a class="nav-item nav-link active" href="#">Home</a>
-      <a class="nav-item nav-link" href="#">Contact Us</a>
-      <a class="nav-item nav-link" href="/register">Sign Up</a>
-      <a class="nav-item nav-link" href="#">Our Menu</a>
-      
-    
-    </div>
-  </div>
-</nav>
+
 
 <div class="container">
     <html>
@@ -28,7 +6,12 @@
    
   
   </head>
-  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <body>
 
     <div class="card" style="width: 18rem;">
@@ -36,7 +19,10 @@
       <div class="card-body">
 
         <form id="stripe-login" [formGroup] = "UserLoginForm" novalidate>
+            <div class="text-center">
           <span class="padding-bottom--15">Enter Your Sign In Details</span>
+        </div>
+        <br>
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email"  type="email" name="email"
@@ -47,6 +33,7 @@
               <div *ngIf="formValidation['email'].errors['email']">Email is invalid</div>
             </div>
           </div>
+          <br>
           <div class="form-group">
             
             <label for="exampleInputPassword1">Password</label>
@@ -58,16 +45,31 @@
                       <div *ngIf="formValidation['password'].errors['required']">Password is required</div>
                     </div>
           </div>
-          <div></div>
+          <br>
+          <div class="form-group">
+          
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp" formControlName="confirmPass"  type="password" name="Password"
+         
+            [ngClass]="{ 'is-invalid': submitted && formValidation['confirmPass'].errors }">
+  
+                    <div *ngIf="submitted && formValidation['confirmPass'].errors" class="invalid-feedback">
+                      <div *ngIf="formValidation['confirmPass'].errors['required']">Password is required</div>
+                    </div>
+          </div>
+          <br>
+          <div class="text-center">
           <div class="field padding-bottom--24">
-            <button (click)="UserLogin()" type="submit" class="btn btn-primary">Sign In</button>
+            <button (click)="UserLogin()" type="submit" class="btn btn-danger">Sign In</button>
 
           </div>
-
+          <br>
+        </div>
           <div class="footer-link padding-top--24">
             <span>Forgot your password? <a class="signup"  href="">Click here</a></span>
            
           </div>
+          <br>
         <div class="footer-link padding-top--24">
           <span>Don't have an account? <a class="signup" [routerLink]="['/register']" href="">Sign up</a></span>
          
@@ -130,6 +132,8 @@
         </div>
       </div>
     </div> -->
+
+
   </body>
   
   </html>

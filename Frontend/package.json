@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@syncfusion/ej2-angular-notifications": "^20.3.56-ngcc",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.2",
+    "sweetalert2": "^11.6.14"
+  }
+}

@@ -1,0 +1,15 @@
+.container {
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+  .card{
+    background-color: rgb(239, 238, 238);
+    position: inherit;
+  }
+
+  input{
+    border-color: red !important;
+  }

@@ -19,6 +19,8 @@ export class RegisterComponent implements OnInit {
     confirmPass: new FormControl()
   });
 
+  public isVisible: boolean = false;
+
   submitted = false;
 
   constructor(private userServive:UserService, private router: Router, private toast: NgToastService, public fb: FormBuilder) { }
@@ -64,6 +66,9 @@ export class RegisterComponent implements OnInit {
             sessionStorage.setItem('token', JSON.stringify(userDetails)); 
  
             this.submitted = false;
+
+            this.isVisible = true;
+    setTimeout(()=> this.isVisible = false,2500)
           }, (err) => {
             this.toast.warning({detail:'Warning',summary:'Fillup the form or Email already exist', sticky:false,position:'tr', duration:6000})
         });
@@ -75,10 +80,13 @@ export class RegisterComponent implements OnInit {
    
   }
   openSuccess() {
-    throw new Error('Method not implemented.');
+    this.toast.success({detail:'Success!',summary: 'Account has been successfully created',position:'tr', duration:3000});
+    
   }
   openWarning() {
-    throw new Error('Method not implemented.');
+    this.toast.warning({detail:'Warning!',summary: 'Passwords do not match',position:'tr', duration:3000});
+
+   
   }
 
 
