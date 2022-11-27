@@ -23,16 +23,18 @@ export class RegisterComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private userServive:UserService, private router: Router, private toast: NgToastService, public fb: FormBuilder) { }
+  constructor(private userServive:UserService, private router: Router, private toast: NgToastService, public fb: FormBuilder) {
+     this.myForm()
+    }
 
 
   myForm() {
     this.AddUserForm = this.fb.group({
       firstname: ['', [ Validators.required ]],
       lastname: ['', [ Validators.required ]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [ Validators.required ]],
-      confirmPass: ['',[ Validators.required ]]
+      email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPass: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
   ngOnInit(): void {
