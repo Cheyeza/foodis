@@ -18,4 +18,8 @@ export class UserService {
     let API_URL = 'http://localhost:3001/users/login';
     return this.http.post(API_URL, loginDetails)
   }
+
+  GetAllUsers() {
+    return this.http.get('http://localhost:3001/users');
+  }
 }

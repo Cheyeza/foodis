@@ -23,19 +23,22 @@ export class RegisterComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private userServive:UserService, private router: Router, private toast: NgToastService, public fb: FormBuilder) { }
+  constructor(private userServive:UserService, private router: Router, private toast: NgToastService, public fb: FormBuilder) { 
+    this.myForm()
+  }
 
 
   myForm() {
     this.AddUserForm = this.fb.group({
       firstname: ['', [ Validators.required ]],
       lastname: ['', [ Validators.required ]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [ Validators.required ]],
-      confirmPass: ['',[ Validators.required ]]
+      email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPass: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
   ngOnInit(): void {
+    
   }
 
   get formValidation(): { [key: string]: AbstractControl } {
@@ -53,10 +56,14 @@ export class RegisterComponent implements OnInit {
           firstname:this.AddUserForm.value.firstname,
           lastname: this.AddUserForm.value.lastname,
           email: this.AddUserForm.value.email,
-          password: this.AddUserForm.value.password
+          password: this.AddUserForm.value.password,
+          confirmPassword: this.AddUserForm.value.confirmPass
         }
     
         console.log(userDetails);
+        if (this.AddUserForm.invalid) {
+          return;
+      }
     
         this.userServive.AddUser(userDetails).subscribe((next:any) => {
             console.log('Add successfully!');
@@ -84,7 +91,7 @@ export class RegisterComponent implements OnInit {
     
   }
   openWarning() {
-    this.toast.warning({detail:'Warning!',summary: 'Passwords do not match',position:'tr', duration:3000});
+    this.toast.warning({detail:'Warning!',summary: 'PEmail or asswords is invalid',position:'tr', duration:3000});
 
    
   }
