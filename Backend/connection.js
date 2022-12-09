@@ -3,8 +3,8 @@ const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'foodis',
-  password: 'Te1998/5',
-  port: 5432,
+  password: 'admin12345',
+  port: 5435,
 })
 
 module.exports = pool
