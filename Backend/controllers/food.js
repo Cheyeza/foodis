@@ -22,9 +22,9 @@ const getItems = (request, response) => {
   
   const postItem = (req, res) => {
 
-    const { name,price,picture,category,status } = req.body
+    const { name,image,price,category,description } = req.body
 
-    pool.query('INSERT INTO public.food(name,price,picture,category,status) VALUES ($1, $2,$3,$4,$5)', [name,price,picture,category,status ], (error, results) => {
+    pool.query('INSERT INTO public.food(name,image,price,category,description) VALUES ($1, $2,$3,$4,$5)', [name,image,price,category,description ], (error, results) => {
       if (error) {
         throw error
       }
@@ -35,9 +35,9 @@ const getItems = (request, response) => {
   
   const updateItem = (request, response) => {
     const id = parseInt(request.params.id);
-    const { name,price,picture,category,status } = request.body
+    const { name,price,image,category,description } = request.body
   
-    pool.query('UPDATE public.food SET name=$1, price=$2, picture=$3, category=$4, status=$5  WHERE id=$6',[name,price,picture,category,status, id], (error, results) => {
+    pool.query('UPDATE public.food SET name=$1, price=$2, image=$3, category=$4, description=$5  WHERE id=$6',[name,price,image,category,description, id], (error, results) => {
         if (error) {
           throw error
         }
