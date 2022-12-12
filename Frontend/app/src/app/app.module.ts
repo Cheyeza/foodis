@@ -17,6 +17,10 @@ import { GetFoodComponent } from './get-food/get-food.component';
 import {DataTablesModule} from 'angular-datatables';
 import { MenuComponent } from './menu/menu.component';
 import { OrderComponent } from './order/order.component';
+import { KotaComponent } from './kota/kota.component';
+import { FriesComponent } from './fries/fries.component';
+import { PiesComponent } from './pies/pies.component';
+import { DrinksComponent } from './drinks/drinks.component';
 
 
 @NgModule({
@@ -29,7 +33,11 @@ import { OrderComponent } from './order/order.component';
     CreateComponent,
     GetFoodComponent,
     MenuComponent,
-    OrderComponent
+    OrderComponent,
+    KotaComponent,
+    FriesComponent,
+    PiesComponent,
+    DrinksComponent
   ],
   imports: [
     BrowserModule,
