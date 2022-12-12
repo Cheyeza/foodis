@@ -6,6 +6,11 @@ import { LandingComponent } from './landing/landing.component';
 import { CreateComponent } from './create/create.component';
 import { GetFoodComponent } from './get-food/get-food.component';
 import { MenuComponent } from './menu/menu.component';
+import { FriesComponent } from './fries/fries.component';
+import { DrinksComponent } from './drinks/drinks.component';
+import { PiesComponent } from './pies/pies.component';
+import { KotaComponent } from './kota/kota.component';
+import { OrderComponent } from './order/order.component';
 
 const routes: Routes = [
   {path : '', component: LandingComponent},
@@ -14,6 +19,11 @@ const routes: Routes = [
 {path : 'admin/food', component: CreateComponent},
 {path : 'GetFood', component: GetFoodComponent},
 {path : 'menu', component: MenuComponent},
+{path : 'kota', component: KotaComponent},
+{path : 'pies', component: PiesComponent},
+{path : 'drinks', component: DrinksComponent},
+{path : 'fries', component: FriesComponent},
+{path : 'order', component: OrderComponent},
 ];
 
 @NgModule({
