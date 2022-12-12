@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="header my-5">
+        <h1 class="pt-4">Menu</h1>
+    </div>
+
+    <a href="#" routerLink="/admin/food" class="btn btn-danger mb-4 mt-4">Add Item To Menu</a>
+    
+    <table class="table table-striped table-responsive table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Picture</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>description</th>
+                <!-- <th width="250px">Action</th> -->
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let res of results">
+                <td>{{res.name}}</td>
+                <td>
+                    <div class="picture">
+                        <img class="img" src="{{ res.image }}">
+                    </div>
+                </td>
+                <td>{{res.price}}</td>
+                <td>{{res.category}}</td>
+                <td>{{res.description}}</td>
+                <!-- <td>{{res.action}}</td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>

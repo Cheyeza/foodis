@@ -4,12 +4,16 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingComponent } from './landing/landing.component';
 import { CreateComponent } from './create/create.component';
+import { GetFoodComponent } from './get-food/get-food.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   {path : '', component: LandingComponent},
 {path : 'register', component: RegisterComponent},
 {path : 'login', component: LoginComponent}, 
-{path : 'food', component: CreateComponent},
+{path : 'admin/food', component: CreateComponent},
+{path : 'GetFood', component: GetFoodComponent},
+{path : 'menu', component: MenuComponent},
 ];
 
 @NgModule({

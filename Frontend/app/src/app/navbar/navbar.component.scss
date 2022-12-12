@@ -10,3 +10,32 @@
 .dropdown-toggle {
     margin-left: 1rem;
 }
+.nav-item{
+    text-shadow: 2rem;
+    &hover{
+        transform: rotate();
+    }
+}
+// ul li {
+//     transform: scale((1));
+//     transition: all 0.3s ease-in-out 0.2s;
+    
+//   }
+  
+//   ul li:hover {
+//     transform: translateY(9px);
+//     transition: all 0.3s ease-in-out 0.1s;
+//   }
+li:hover{
+    font-family: Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: capitalize;
+}
+

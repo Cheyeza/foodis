@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -13,6 +13,10 @@ import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreateComponent } from './create/create.component';
+import { GetFoodComponent } from './get-food/get-food.component';
+import {DataTablesModule} from 'angular-datatables';
+import { MenuComponent } from './menu/menu.component';
+import { OrderComponent } from './order/order.component';
 
 
 @NgModule({
@@ -22,7 +26,10 @@ import { CreateComponent } from './create/create.component';
     LoginComponent,
     LandingComponent,
     NavbarComponent,
-    CreateComponent
+    CreateComponent,
+    GetFoodComponent,
+    MenuComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,9 @@ import { CreateComponent } from './create/create.component';
     ReactiveFormsModule,
     RouterModule,
     NgToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DataTablesModule,
+    CommonModule
   ],
   providers: [
     

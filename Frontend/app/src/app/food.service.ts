@@ -12,4 +12,8 @@ export class FoodService {
   GetItems() {
     return this.httpClient.get('http://localhost:3001/Items');
   }
+
+  PostItems(foodDetails:any) {
+    return this.httpClient.post('http://localhost:3001/Items',foodDetails);
+  }
 }
