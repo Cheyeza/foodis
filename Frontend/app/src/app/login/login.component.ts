@@ -57,9 +57,17 @@ export class LoginComponent implements OnInit {
 
           this.submitted = false;
         }, (err) => {
-          this.toast.warning({detail:'Warning',summary:'Email or Password is invalid', sticky:false,position:'tr', duration:6000})
+          this.toast.warning({detail:'Warning',summary:'Fillup the form or Email already exist', sticky:false,position:'tr', duration:6000})
       });
       
+   
+  } openSuccess() {
+    this.toast.success({detail:'Success!',summary: 'Account has been successfully created',position:'tr', duration:3000});
+    
+  }
+  openWarning() {
+    this.toast.warning({detail:'Warning!',summary: 'Ypur Email or Password is Invalid',position:'tr', duration:3000});
+
    
   };
 

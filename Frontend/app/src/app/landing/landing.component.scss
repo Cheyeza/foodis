@@ -1,6 +1,15 @@
-// .bg-image{
-    
-// }
+.bg-image{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .row{
     justify-content: center;
+}
+.card-img-top{
+    justify-content: space-between;
+    border-radius: 1.5rem;
+    width: 4 rem;
+    height: 13rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
 }

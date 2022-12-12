@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CreateComponent } from './create/create.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     RegisterComponent,
     LoginComponent,
     LandingComponent,
-    NavbarComponent
+    NavbarComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
