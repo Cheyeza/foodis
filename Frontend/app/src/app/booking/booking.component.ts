@@ -20,11 +20,10 @@ export class BookingComponent implements OnInit {
   users:UserDetails[]= [];
   menu:Food[]= [];
   bid!:number;
+  FormBuilder:any;
   userb: Booking[] = [];
+  mydata:any[] = [];
 
-  // bForm: FormGroup = new FormGroup({
-
-  // });
 
   BookingForm: FormGroup = new FormGroup({
     option: new FormControl(''),
@@ -32,8 +31,9 @@ export class BookingComponent implements OnInit {
     user_id: new FormControl(''),
     food_id: new FormControl('')
   });
-  public name = localStorage.getItem('name');
-  public loggedEmail = localStorage.getItem('loggedEmail');
+
+  // public name = localStorage.getItem('name');
+  // public loggedEmail = localStorage.getItem('loggedEmail');
 
   submitted = false;
 
@@ -63,24 +63,39 @@ export class BookingComponent implements OnInit {
     return this.BookingForm.controls;
   }
 
+
   addBooking(){
-    let bookingDetails = {
-      option: this.BookingForm.value.option,
-      booking_status: this.BookingForm.value.booking_status,
-      user_id: this.BookingForm.value.user_id,
-      booking_id: this.BookingForm.value.booking_id,
-   
+    this.submitted = true;
+
+    if(this.BookingForm.value.option != null && this.BookingForm.value.option != '')
+    {
+
+      let bookingDetails = {
+        option:this.BookingForm.value.option,
+        booking_status: this.BookingForm.value.booking_status,
+        user_id: this.users[0].id,
+        food_id: this.menu[0].id
+        
+      }
+  
+      console.log('details',bookingDetails);
+  
+      this.booking.addBooking(bookingDetails).subscribe((next:any) => {
+          console.log('Add successfully!');
+          // this.router.navigate(['/profile']);
+          // this.openSuccess();
+          this.submitted = false;
+        });
+
+        // this.router.navigate(['/profile']);
+        // this.openSuccess();
     }
-    // let bDetails={
-    //   option: this.userb.
-    // }
+    else{
 
-    this.booking.addBooking(bookingDetails).subscribe((res:any)=>{
-      let result = res;
-      console.log('booking details',result);
-      
+    }
+   
 
-    })
+   
   }
 
   

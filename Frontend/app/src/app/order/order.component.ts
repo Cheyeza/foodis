@@ -25,4 +25,10 @@ export class OrderComponent implements OnInit {
     })
   }
 
+  view(id:any){
+
+
+    console.log(id)
+  }
+
 }
