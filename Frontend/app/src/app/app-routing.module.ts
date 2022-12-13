@@ -11,6 +11,8 @@ import { DrinksComponent } from './drinks/drinks.component';
 import { PiesComponent } from './pies/pies.component';
 import { KotaComponent } from './kota/kota.component';
 import { OrderComponent } from './order/order.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
   {path : '', component: LandingComponent},
@@ -24,6 +26,8 @@ const routes: Routes = [
 {path : 'drinks', component: DrinksComponent},
 {path : 'fries', component: FriesComponent},
 {path : 'order', component: OrderComponent},
+{path : 'profile', component: ProfileComponent},
+{path : 'booking', component: BookingComponent},
 ];
 
 @NgModule({

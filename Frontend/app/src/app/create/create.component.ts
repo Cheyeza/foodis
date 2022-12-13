@@ -70,7 +70,7 @@ async PostItems(){
    
 
 
-}
+    }
 
     console.log(this.imgUrl); 
     //console.log('details',FoodDetails);
