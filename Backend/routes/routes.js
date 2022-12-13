@@ -10,6 +10,7 @@ const port = process.env.PORT || 3001;
 const register = require("../controllers/register")
 const login = require("../controllers/login")
 const food = require("../controllers/food")
+const bookings = require("../controllers/booking")
 
 const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
@@ -72,6 +73,15 @@ router.get('/item/:id', food.getItemByName)
 router.post('/items', food.postItem)
 router.put('/items/:id', food.updateItem)
 router.delete('/item/:id', food.deleteItem)
+
+//routes for bookings
+router.post('/bookings', bookings.addBooking)
+router.get('/bookings', bookings.getAllBookings)
+router.get('/bookings/:id', bookings.getBookingById)
+router.put('/bookings/:id', bookings.updateBooking)
+router.get('/userBooking', bookings.getUserBooking)
+
+// router.delete('/bookings/:id', bookings.deleteBooking)
 
 router.listen(port, () => {
     console.log(`App running on port ${port}.`)

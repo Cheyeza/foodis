@@ -21,6 +21,8 @@ import { KotaComponent } from './kota/kota.component';
 import { FriesComponent } from './fries/fries.component';
 import { PiesComponent } from './pies/pies.component';
 import { DrinksComponent } from './drinks/drinks.component';
+import { BookingComponent } from './booking/booking.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { DrinksComponent } from './drinks/drinks.component';
     KotaComponent,
     FriesComponent,
     PiesComponent,
-    DrinksComponent
+    DrinksComponent,
+    BookingComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
