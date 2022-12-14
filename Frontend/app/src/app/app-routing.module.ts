@@ -13,6 +13,7 @@ import { KotaComponent } from './kota/kota.component';
 import { OrderComponent } from './order/order.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BookingComponent } from './booking/booking.component';
+import { EditItemComponent } from './edit-item/edit-item.component';
 
 const routes: Routes = [
   {path : '', component: LandingComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
 {path : 'order', component: OrderComponent},
 {path : 'profile', component: ProfileComponent},
 {path : 'booking', component: BookingComponent},
+{path : 'admin/editItem', component: EditItemComponent},
 ];
 
 @NgModule({

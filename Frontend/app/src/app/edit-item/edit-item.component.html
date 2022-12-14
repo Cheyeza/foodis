@@ -1,0 +1,78 @@
+<div class="container my-4">
+    
+
+    <div class="header">
+        <h1 class="pt-4">Update car</h1>
+      </div>
+
+  
+
+    <br>
+    <br>
+    
+    <form [formGroup]="EditItemForm" novalidate>
+
+
+    <div class="form-row">
+       
+        <div class="form-group col-md-4">
+            <label class="form-label" for="customFile">Item Image</label>
+      <input type="file" class="form-control" id="customFile" formControlName="image" (change)="onFileChange($event)"/>
+      
+        </div>
+        <div class="form-group col-md-4">
+            <label for="name">name:</label>
+          <input 
+              formControlName="name"
+              id="name" 
+              type="text" 
+              class="form-control">
+        </div>
+  
+        <div class="form-group col-md-4">
+            <label for="model">price:</label>
+          <input 
+              formControlName="price"
+              id="price" 
+              type="text" 
+              class="form-control">
+        </div>
+      </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+        <label for="model">category:</label>
+      <input 
+          formControlName="category"
+          id="category" 
+          type="text" 
+          class="form-control">
+    </div>
+      <div class="form-group col-md-4">
+          <label for="numberPlate">Description:</label>
+          <input 
+              formControlName="Description"
+              id="Description" 
+              type="text" 
+              class="form-control">
+      </div>
+      
+    </div>
+
+  
+   
+    <div>
+        <div class="d-flex justify-content-center mx-auto">
+            
+            <div class=" text-center mt-5">
+              <div class="mb-3 col-auto">
+                <button type="submit" (click)="updateCar()" class=" submit btn btn-danger" routerLink="/GetFood"> SUBMIT</button> 
+              </div>
+
+              <div class="mb-3 col-auto">
+                <a routerLink="/GetFood" class="submit btn btn-danger justify-content-end">Back</a>
+              </div>
+          </div>
+    </div>
+        
+    </div>
