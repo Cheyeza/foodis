@@ -23,6 +23,7 @@ import { PiesComponent } from './pies/pies.component';
 import { DrinksComponent } from './drinks/drinks.component';
 import { BookingComponent } from './booking/booking.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditItemComponent } from './edit-item/edit-item.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ProfileComponent } from './profile/profile.component';
     PiesComponent,
     DrinksComponent,
     BookingComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,

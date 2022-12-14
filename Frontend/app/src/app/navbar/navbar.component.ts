@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
     }
     else
     {
-      console.log('nonononoo');
+      // console.log('nonononoo');
     }
 
   }

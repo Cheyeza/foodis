@@ -33,8 +33,8 @@ export class RegisterComponent implements OnInit {
       firstname: ['', [ Validators.required ]],
       lastname: ['', [ Validators.required ]],
       email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPass: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      confirmPass: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
   ngOnInit(): void {
@@ -68,7 +68,7 @@ export class RegisterComponent implements OnInit {
         this.userServive.AddUser(userDetails).subscribe((next:any) => {
             console.log('Add successfully!');
             this.openSuccess();
-            this.router.navigate(['/login']);
+            this.router.navigate(['/']);
 
             sessionStorage.setItem('token', JSON.stringify(userDetails)); 
  
